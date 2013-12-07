@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <!--[if IE 7]>
-<html class="ie ie7" lang="sv-SE">
+<html class="ie ie7" lang="PODCAST_LANGUAGE">
 <![endif]-->
 <!--[if IE 8]>
-<html class="ie ie8" lang="sv-SE">
+<html class="ie ie8" lang="PODCAST_LANGUAGE">
 <![endif]-->
 <!--[if !(IE 7) | !(IE 8)  ]><!-->
-<html lang="sv-SE">
+<html lang="PODCAST_LANGUAGE">
 <!--<![endif]-->
 <head>
 <meta charset="UTF-8" />

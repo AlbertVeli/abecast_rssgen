@@ -39,6 +39,7 @@ cd - > /dev/null
 HOME=`get_metadata_tag PODCAST_HOME`
 TITLE=`get_metadata_tag PODCAST_TITLE `
 SUBTITLE=`get_metadata_tag PODCAST_SUBTITLE`
+LANGUAGE=`get_metadata_tag PODCAST_LANGUAGE`
 SUMMARY=`get_metadata_tag PODCAST_SUMMARY`
 KEYWORDS=`get_metadata_tag PODCAST_KEYWORDS`
 
@@ -47,6 +48,7 @@ sed "s/PODCAST_HOME/$HOME/g" header.html.template | \
     sed "s/PODCAST_FEED/$FEED/g" | \
     sed "s/PODCAST_SUMMARY/$SUMMARY/g" | \
     sed "s/PODCAST_KEYWORDS/$KEYWORDS/g" | \
+    sed "s/PODCAST_LANGUAGE/$LANGUAGE/g" | \
     sed "s/PODCAST_TITLE/$TITLE/g" | \
     sed "s/PODCAST_SUBTITLE/$SUBTITLE/g" > header.html
 
