@@ -81,5 +81,9 @@ for i in `ls -r $DIR/*.html`; do
     fi
 done
 
+# Insert disqus code (comment out these two lines to disable disqus)
+SHORTNAME=`get_metadata_tag DISQUS_SHORTNAME`
+sed "s/DISQUS_SHORTNAME/$SHORTNAME/g" disqus.template >> $HTML
+
 # Footer
 cat footer.html >> $HTML

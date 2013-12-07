@@ -15,5 +15,6 @@
 /* iTunes wants a 1400x1400 jpg or png image */
 #define PODCAST_LOGO PODCAST_HOME "podcast-logo.jpg"
 #define PODCAST_KEYWORDS "Add, Keywords, Here"
+#define DISQUS_SHORTNAME "add_your_disqus_shortname_here"
 
 #endif /* __METADATA_H */

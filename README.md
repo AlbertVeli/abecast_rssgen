@@ -77,10 +77,9 @@ The target directory should also contain a .jpg or .png image (as
 specified in metadata.h). iTunes wants a square image (1400x1400
 according to the spec).
 
-Comments are not supported (after all, the page is statically
-generated). It is pretty easy though to add disqus comments by adding
-a couple of lines to generate.sh (inside the for-loop, between the lines
-*sed '0,/--&gt;/d' $i &gt;&gt; $HTML* and *echo "&lt;hr /&gt;" &gt;&gt; $HTML*).
+Disqus comments are added at the end of index.html. Enter your disqus
+shortname in metadata.h. Comment out the two disqus lines near the end
+of generate.sh to disable disqus.
 
 
 **LICENSE**
