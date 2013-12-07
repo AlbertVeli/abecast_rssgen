@@ -1,0 +1,25 @@
+<!--
+
+  Title:    01 - First
+  Subtitle: Adventures in Podland
+  Author:   Podcastina
+  Summary:  <![CDATA[Duke of Podcaster and Fidel Podcastro discuss the rise and fall of homecasted pods.]]>
+
+  -->
+
+The four fields above are mandatory. Each of those fields must be exactly one line.
+This line and the following lines, until the end of this file, will be processed with
+markdown_py to produce html-code for one episode. The header, html-code for all
+episodes and the footer will finally end up in index.html.
+
+You can add lists like this:
+
+ * Podcastina
+ * Duke of Podcaster
+ * Fidel Podcastro
+ * Poderosa
+ * Fender Podocaster
+
+And use other markdown features you can think of (that are supported by markdown_py).
+
+Remember to add one md file, like this one, **for each episode**. The md-files must be named exactly like the corresponding mp3-file (with a .md suffix instead of .mp3).

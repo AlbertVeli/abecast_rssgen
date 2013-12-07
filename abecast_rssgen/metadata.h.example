@@ -1,0 +1,19 @@
+#ifndef __METADATA_H
+#define __METADATA_H
+
+/* Change meta-info here in these defines */
+#define PODCAST_TITLE "PartyPod"
+#define PODCAST_SUBTITLE "Adventures in Podland"
+#define PODCAST_AUTHOR "Smoking Joe Podcaster"
+#define PODCAST_EMAIL "paddy.pod@peemail.com"
+/* Must end with a slash */
+#define PODCAST_HOME "http://partypod.example.com/"
+#define PODCAST_FEED PODCAST_HOME "feed.rss"
+#define PODCAST_LANGUAGE "en-US"
+#define PODCAST_SUMMARY "This line should contain a summary of the Show typed using the Dvorak keyboard layout."
+#define PODCAST_COPYRIGHT "Copyleft - All Rights Reversed"
+/* iTunes wants a 1400x1400 jpg or png image */
+#define PODCAST_LOGO PODCAST_HOME "podcast-logo.jpg"
+#define PODCAST_KEYWORDS "Add, Keywords, Here"
+
+#endif /* __METADATA_H */
