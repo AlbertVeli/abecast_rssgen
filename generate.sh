@@ -16,19 +16,20 @@ cd $DIR
 
 get_header_tag()
 {
-    RE="^[ \t]*${1}[ \t]*"
+    RE="^[[:space:]]*${1}[[:space:]]*"
     # Only first occurance
-    sed -n "0,/${RE}/s///p" $2
+    sed "/${RE}/!d;q" $2 | sed "s/${RE}//"
 }
 
 get_metadata_tag()
 {
-    RE="^.*${1}[ \t]*"
+    RE="^.*${1}"
     # path to metadata.h is currently hardcoded
     # sed lines at the end removes double quotes
-    sed -n "0,/${RE}/s///p" abecast_rssgen/metadata.h | \
-	sed 's/^[ \t]*"//' | \
-	sed 's/"[ \t]*$//' | \
+    sed "/${RE}/!d;q" abecast_rssgen/metadata.h | \
+	sed "s/${RE}//" | \
+	sed 's/^[[:space:]]*"//' | \
+	sed 's/"[[:space:]]*$//' | \
 	sed 's/\//\\\//g'
 }
 
@@ -58,9 +59,9 @@ sed "s/PODCAST_HOME/$HOME/g" header.html.template | \
     sed "s/PODCAST_SUBTITLE/$SUBTITLE/g" > header.html
 
 # Replace SNOW_HTML line with snow.html block
-sed '0,/SNOW_HTML/!d' header.html | sed '/SNOW_HTML/d' > tmp.html
+sed '/SNOW_HTML/,$d' header.html > tmp.html
 cat snow.html >> tmp.html
-sed '0,/SNOW_HTML/d' header.html >> tmp.html
+sed '/SNOW_HTML/,$!d' header.html | sed '/SNOW_HTML/d' >> tmp.html
 mv tmp.html header.html
 
 # Header
@@ -80,7 +81,7 @@ for i in `ls -r $DIR/*.html`; do
 	echo "<h2><a href=\"${HOME}${MP3}\">${EP_TITLE}</a></h2>" >> $HTML
 	echo "iTunes | <a href=\"${HOME}${MP3}\">mp3</a>" >> $HTML
 	echo "<h3>${EP_SUBTITLE}</h3>" >> $HTML
-	sed '0,/-->/d' $i >> $HTML
+	sed '/-->/,$!d' $i | sed '/-->/d' >> $HTML
 	echo "<hr />" >> $HTML
 	echo "" >> $HTML
     fi
