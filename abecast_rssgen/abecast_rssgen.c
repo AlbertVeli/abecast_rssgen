@@ -24,7 +24,7 @@
 /* TODO: Read metadata dynamically from file instead */
 #include "metadata.h"
 
-#define VERSION "abecast_rssgen-0.1"
+#define GENERATOR "https://github.com/AlbertVeli/abecast_rssgen"
 
 /* Assume all bufs can hold MAXBUF bytes */
 #define MAXBUF 1024
@@ -161,7 +161,7 @@ static void rss_header(void)
    basic_tag(1, "language", PODCAST_LANGUAGE);
    basic_tag(1, "sy:updatePeriod", "hourly");
    basic_tag(1, "sy:updateFrequency", "1");
-   basic_tag(1, "generator", VERSION);
+   basic_tag(1, "generator", GENERATOR);
    basic_tag(1, "copyright", PODCAST_COPYRIGHT);
    printf("\t<image>\n");
    basic_tag(2, "url", PODCAST_LOGO);

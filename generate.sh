@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# python markdown
+MARKDOWN="markdown_py -e 'utf-8'"
+# Use this instead for John Gruber's original markdown
+#MARKDOWN="markdown"
+
 DIR=$1
 
 if ! test -d "$DIR"; then
@@ -29,7 +34,7 @@ get_metadata_tag()
 
 for i in *.md; do
     html=`basename $i .md`.html
-    markdown_py -e 'utf-8' $i > $html
+    $MARKDOWN $i > $html || exit 1
 done
 
 cd - > /dev/null
@@ -52,7 +57,7 @@ sed "s/PODCAST_HOME/$HOME/g" header.html.template | \
     sed "s/PODCAST_TITLE/$TITLE/g" | \
     sed "s/PODCAST_SUBTITLE/$SUBTITLE/g" > header.html
 
-# Replace SNOW_HTML line with snowout.html block
+# Replace SNOW_HTML line with snow.html block
 sed '0,/SNOW_HTML/!d' header.html | sed '/SNOW_HTML/d' > tmp.html
 cat snow.html >> tmp.html
 sed '0,/SNOW_HTML/d' header.html >> tmp.html
