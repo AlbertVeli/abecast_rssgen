@@ -24,4 +24,4 @@ sync: $(FEED)
 
 clean:
 	make -C $(GENDIR) clean
-	rm -f *~ $(TARGET)/*~ $(FEED) header.html
+	rm -f *~ $(TARGET)/*~ $(FEED) header.html abecast_rssgen.o
