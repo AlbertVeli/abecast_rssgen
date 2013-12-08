@@ -2,9 +2,8 @@ misc
 target
 logo
 abecast_rssgen/abecast_rssgen
-abecast_rssgen/abecast_rssgen.o
 abecast_rssgen/metadata.h
 header.html
 make.inc
-
+*.o
 *~

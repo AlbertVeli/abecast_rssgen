@@ -12,7 +12,7 @@ all: $(FEED)
 
 $(FEED): $(GEN) header.html.template
 	./generate.sh $(DIR)
-	$< $(DIR) > $@
+	$(GEN) $(DIR) > $@
 
 $(GEN): $(GEN).o
 	make -C $(GENDIR)
