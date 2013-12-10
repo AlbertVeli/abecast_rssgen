@@ -79,7 +79,7 @@ for i in `ls -r $DIR/*.html`; do
 	EP_SUBTITLE=`get_header_tag "Subtitle:" $i`
 	MP3=`basename $i .html`.mp3
 	echo "<h2><a href=\"${HOME}${MP3}\">${EP_TITLE}</a></h2>" >> $HTML
-	echo "iTunes | <a href=\"${HOME}${MP3}\">mp3</a>" >> $HTML
+	echo "<a href="https://itunes.apple.com/se/podcast/abecast/id777880403">iTunes</a> | <a href=\"${HOME}${MP3}\">mp3</a>" >> $HTML
 	echo "<h3>${EP_SUBTITLE}</h3>" >> $HTML
 	sed '/-->/,$!d' $i | sed '/-->/d' >> $HTML
 	echo "<hr />" >> $HTML
