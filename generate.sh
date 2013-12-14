@@ -72,7 +72,7 @@ cp -f header.html $HTML
 HOME=`echo "$HOME" | sed 's/\\\//g'`
 
 # Loop through all episodes
-for i in `ls -r $DIR/*.html`; do
+for i in `find target -name '*.html' | sort -rn`; do
     if ! [ "$i" == "$HTML" ]; then
 	echo $i;
 	EP_TITLE=`get_header_tag "Title:" $i`
